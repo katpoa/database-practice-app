@@ -15,25 +15,26 @@ const personSchema = new Schema({
 
 var Person = mongoose.model('Person', personSchema)
 
-var save = function(data) {
-  Person.create({name: data.name, age: data.age}, function (err) {
-    if (err) {
-      console.log(err)
-    } else {
-      console.log('saving data')
-    }
-  })
-}
+// var save = function(data) {
+//   Person.create({name: data.name, age: data.age}, function (err) {
+//     if (err) {
+//       console.log(err)
+//     } else {
+//       console.log('saving data')
+//     }
+//   })
+// }
 
-var retrieve = function(callback) {
-  Person.find().select('name age').exec(function(err, person) {
-    if (err) {
-      console.log(err)
-    } else {
-      callback(person)
-    }
-  })
-}
+// var retrieve = function(callback) {
+//   Person.find().select('name age').exec(function(err, person) {
+//     if (err) {
+//       console.log(err)
+//     } else {
+//       callback(person)
+//     }
+//   })
+// }
 
-module.exports.save = save;
-module.exports.retrieve = retrieve;
+// module.exports.save = save;
+// module.exports.retrieve = retrieve;
+module.exports.Person = Person;
